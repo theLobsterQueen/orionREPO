@@ -1,0 +1,147 @@
+// TODO LIST FOR ORION //
+
+// PRE-DESIGN, PREPARATION //
+[X] Create General Design Document
+[ ] Prepare Concept Assets
+	[ ] Bot Design
+		[X] Stations
+			[X] Mining Stations
+			[X] Research Stations
+			[X] Defense Stations
+		[ ] Ships
+			[X] Interceptor
+			[ ] Frigate
+			[ ] Battleship
+			[ ] Dreadnought
+		[ ] Infrastructure
+			[ ] Energy Waveguides
+			[ ] Transit Lanes
+	[ ] Human Remmants Design
+		[ ] Stations
+			[ ] Mining Stations
+			[ ] Research Stations
+			[ ] Battlefleet Remmants
+	[ ] Star-Scion Design
+		[ ] Ships
+			[ ] Interceptor
+			[ ] Frigate
+			[ ] Battleship
+			[ ] Dreadnought
+		[ ] UI Elements
+			[ ] Raid Notification
+			[ ] Attack Notification
+	[ ] UI Design
+		[X] Mockups for Title Screen
+		[ ] Mockups for Main Menu
+		[ ] Mockups for Options Menu
+		[ ] Mockups for Screens in Game
+			[ ] Map Screen
+				[ ] Different Overlay Types?
+			[ ] Research Screen
+			[ ] Unit Overview Panel
+			[ ] Station Construction Panel
+			[ ] Planetary Panel
+			[ ] Dyson Sphere Overview Screen
+				[ ] Energy Balance Panel
+				[ ] Construction Progress Panel
+				[ ] Bot Assignment Panel
+			[ ] Top Bar
+				[ ] Idle/Working Bots/Bot Types Element
+				[ ] Current Energy/Energy Balance Element
+				[ ] Resource Counts/Balance Element
+				[ ] Dyson Sphere Construction Progress
+			[ ] Notifications Area
+				[ ] Decide Where to House
+				[ ] Human-Relevant Events
+				[ ] Star-Scion-Relevant Events
+				[ ] Construction-Relevant Events
+				[ ] Science-Relevant Events
+				[ ] Military-Construction-Relevant Events
+
+[ ] Create Rough Sketch for Narrative 
+
+// FOUNDATIONAL PROGRAMMING PHASE //
+[ ] Rendering
+	[ ] Finish Rendering Queue System
+[ ] Dyson Sphere
+	[ ] Energy Production
+	[ ] Bot Construction
+	[ ] Accepting Resources
+	[ ] Being Assigned Bots to Construct
+[ ] Characters/Entities
+	[X] Displaying on Map
+		[X] Display as Rect
+		[X] Display as Sprite
+		[X] Change Color Based on Type
+		[X] Change Color Based on Selection
+	[X] Being Selected and Given Orders
+		[X] Move to Target
+		[ ] Patrol (Setting Waypoints)
+		[ ] (Applicable) Attack Target
+		[ ] (Applicable) Construct Station
+		[ ] (Applicable) Seize Planet
+	[ ] Variable Stats
+		[ ] Health
+		[X] Move Speed
+		[ ] Attack Power
+		[ ] Attack Rate
+		[X] Attack/View Range
+		[ ] Max Charge/Current Charge
+	[ ] Displaying Information on UI
+		[ ] Displaying Attack Range
+		[ ] Displaying Health
+		[ ] Displaying Move Orders
+	[ ] Being Given Modified Orders through UI
+[ ] Environment
+	[ ] System-Type
+		[ ] Different Star Types
+		[ ] Different Size (Density) of Systems
+	[ ] Planet-Type
+		[ ] Different Planet Types
+		[ ] Different Available Resources on Planets
+		[ ] Different Positionings Relative to Stars
+	[ ] Asteroid/Space-Object Type
+		[ ] Different Available Resources on Space-Objects
+		[ ] Different Positionings Relative to Stars
+		[ ] Clumping/Belting Behavior to resemble Asteroid
+			Belts/Clusters
+	[ ] Anomaly-Type
+		[ ] Simple Anomalies
+			[ ] Resource Caches
+				[ ] Positioning near Space Objects
+				[ ] Different Types of Avaialble Resources
+			[ ] Starcharts
+				[ ] Positioning near Space Objects
+				[ ] Positioning in Planets
+			[ ] Ancient Bots
+				[ ] Positioning near Space Objects
+				[ ] Power Scaling based on Player Tech
+				[ ] Different Types of Bots
+			[ ] Star-Scion Alarm
+				[ ] Positioning near Space Objects
+				[ ] Positioning in Planets
+				[ ] Power Scaling based on Player Tech
+				[ ] Power Scaling based on Anomaly Value
+				[ ] Different Types of Scion Detachments
+		[ ] Advanced Anomalies
+			[ ] Human Battlefleet Remmants
+				[ ] Positioning in Systems
+				[ ] Power Scaling based on Player Tech
+				[ ] Frequency based on Distance from Start
+			[ ] Human Research Station
+				[ ] Positioning in Systems
+				[ ] Power Scaling based on Player Tech
+				[ ] Frequency based on Distance from Start
+			[ ] Human WarpGate Research
+				[ ] Positioning in Space
+				[ ] Discovery Narrative
+				[ ] Technology Unlock and Station Design
+	[ ] Procedural System-Planet Generation
+		[ ] System Generation and Placement on Galactic Map
+		[ ] Planetary Generation in Systems
+			[ ] Is Affected By Central Star?
+			[ ] Random-Features and Facilities
+		[ ] Anomaly Generation in Systems
+		[ ] Star-Scion Generation around Anomalies
+			[ ] Strength of Generation dependant on Anomalies
+	

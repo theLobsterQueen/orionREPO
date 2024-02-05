@@ -1,0 +1,27 @@
+#ifndef ORION_CONSTANTS_H
+#define ORION_CONSTANTS_H 1
+
+// DEFINES THE SPRITE ATLAS FOR THE ORION SPRITES //
+
+// DEBUG FILES //
+#define DEBUG_MODE					true
+#define SHOW_HITBOXES 				false
+
+// BOT DESIGNS //
+#define BOT_MINING_STATION 			0
+#define BOT_RESEARCH_STATION		1
+#define BOT_DEFENSE_STATION			2
+
+#define BOT_INTERCEPTOR				5
+#define BOT_FRIGATE					6
+#define BOT_BATTLESHIP				7
+#define BOT_DREADNOUGHT				8
+
+// ORDER CONSTANTS //
+#define MOVE_TO 					0
+
+// RENDER CONSTANTS //
+#define RENDER_MAX					512
+#define FUNC_RETURN					void
+
+#endif

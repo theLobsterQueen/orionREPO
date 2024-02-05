@@ -1,0 +1,438 @@
+// THIS FILE IS THE GENERAL DESIGN DOCUMENT FOR THE INCREMENTAL SPACE-IDLER //
+	// "ORION." CREATED BY LAYNA STAMBAUGH ON 4.11.23 //
+
+Logline :
+	Incremental idler that follows and expands upon games like "A Dark
+		Room," "Crank Game," and "NGU Idle." Control an ever-expanding
+		horde of robots dedicated to finishing a Dyson Sphere orbiting
+		the blue supergiant star Alnilam. Research technology to 
+		facilitate construction, send out voyager bots to uncover 
+		ancient materials and scout celestial bodies for new 
+		resources, as well as fight an ancient evil as it tries 
+		to wipe out the last reminders of humanity in the galaxy.
+
+Design Pillars :
+	Atmospheric & Lonely :
+		Much like "Crank Game," the environment in Orion is designed
+			to make the player feel melancholic and lonely, but in
+			a way that brings more intrigue than despair. The 
+			universe in Orion is long dead, and the quiet, desolate 
+			soundscape and mournful style of the narration do
+			their best to represent that. 
+
+		Although the universe is dead, however, it does not feel 
+			"empty." The player's scouting and surveying bots
+			will frequently find remmants of human technology, such
+			as old research stations, energy experiments, and
+			lost or mostly destroyed battle formations. When such
+			items are found, they can be one of two core types:
+			"Simple" or "Complex." Simple items give the player
+			some type of boost, but not much else. Complex items
+			are unique, and require the player to send a dedicated
+			exploration force to uncover their secrets. These
+			items usually have some narrative aspect, and are
+			not procedurally generated. They can activate enemy
+			formations, reveal new or special resources,  and
+			generally the discovery of one marks a watershed
+			moment in a playthrough.
+
+	3X Gameplay :
+		From the start of the game, the player is given one directive;
+			"Finish the Dyson Sphere." However, dyson spheres are
+			incredibly expensive economic projects, and the 
+			creation of one implicitly demands many millions of
+			tons of resources and many hours of hard labor.
+
+		To meet this near-impossible demand for resources and labor,
+			the player is incentivized to explore, expand, and
+			exploit their neighboring surroundings. Expanding
+			over time from the home system of Alnilam to many
+			dozens over the course of the game. The player must
+			exploit resources to create the tools and resources
+			they need to improve their productivity, and then
+			use that additional productivity to perform research,
+			create military or exploratory divisions, and so on.
+
+	The Sphere and the Star-Scions :
+		The Dyson Sphere and the hive-mind like spaceborne monsters
+			known only as Star-Scions both serve the same
+			overarching purpose; to motivate the player to advance
+			through the game. The Dyson Sphere does this by 
+			providing the player energy as it is upgraded, forming
+			a positive feedback loop where the player invests
+			resources into the Dyson Sphere, and the sphere in
+			turn expands the baseline of their economy. Energy
+			cannot be gathered in any other way, and in order
+			for the player to sustainably expand into other
+			systems, they need to use infrastructrue that connects
+			the dyson sphere to designated recharge stations
+			in systems they expand to, forming, in essence, an
+			interstellar power network.
+
+		The Star-Scions, on the other hand, give the player motivation
+			to invest into military industry and military
+			technology. They will frequently attack unprotected
+			resource routes, are occasionally stationed in star
+			systems that the player has had yet to explore, and
+			can even organize raids against unprotected systems,
+			or systems with special attributes that make them
+			desirable to the Star-Scions.
+		
+		In order to combat this threat, the player must research and 
+			develop battle-bots. However, the strength of the 
+			Star-Scion hordes only increases as the hive mind 
+			grows more aware and concerned of the player's 
+			presence. This creates an infinite arm race between 
+			the forces and defences the player puts into
+			place and the never-ending hordes of monsters.
+
+Gameplay Loop :
+	Be assigned an objective, such as acquiring a certain amount of 
+		resources or exploring a certain point in space.
+
+	Exploit new or more resources in known and available space, and/or 
+		research new technologies using currently avaialble resources.
+
+	Utilize the new resources and research as a means to accomplish the 
+		objective, thereby being given a reward. This reward can be 
+		either furthering the narrative or granting the player some 
+		new capability that changes how they play the game at some 
+		core level.
+
+	Repeat the loop until all narrative elements and novel gameplay 
+		additions have been acquired. Note that the last objective in 
+		this loop would be to finish the construction of the Dyson 
+		Sphere. After the Dyson Sphere is created, the player will be 
+		given a neat narrative blurb, and then they will be able
+		to continue playing in "free mode," although their
+		production and research capabilities will be greatly
+		enhanced due to the Dyson Sphere.
+
+Features :
+	Combat :
+		Combat is simple and requires minimal player input; the core
+			of the experience is in creating and maintaining
+			the units that engage in combat in the first place.
+			When a unit is in close enough range to another unit,
+			it begins to fire attacks. The range of a unit is
+			unique, and a unit with a high enough range may 
+			rain fire down upon an enemy without having to
+			worry about repercussions. Units only have a basic
+			health value, and this value decreases by a set
+			amount whenever it is hit by an enemy projectile. 
+
+		Both the player and the Star-Scions have access to a number
+			of different units. For the player, these units are
+			accessed by spending different types and amounts of
+			resources. They have different abilities and attributes,
+			which changes their usefullness in any given situation.
+			For the Star-Scions, the range of units they have
+			access to depends on the threat level that the player
+			has, and the type of mission that the formation
+			of Star-Scions is embarking on. For example, a band
+			of Star-Scions attacking a resource route will typically
+			consist of small, lightly armed and armored units.
+			However, an assault on a heavily defended world
+			will consist of slower, more brutal units.
+
+	Resource Exploitation and Resource Routes :
+		Resource exploitation can be done in two separate ways:
+			orbital mining stations and planetary facilities.
+			The way to construct both of these entities are
+			described separately in their own sections. After
+			the resources are mined, however, they need to be
+			transported to the dyson sphere via a "resource route."
+
+		These routes are not constructible objects, but rather 
+			concepts and indicators that show how bots transfer
+			materials from their exploitation areas to the 
+			dyson sphere. They are crucially important, however,
+			for two separate reasons. Firstly, if the player
+			constructs infrasturcture to speed up bot movement
+			along these resource routes, they will reduce the
+			amount of time (and thus the amount of resources)
+			spent getting that material to its final destination.
+			This, essentially, means that connecting a material
+			to the dyson sphere with infrastructure flat-out
+			improves the productivity of that exploitation, 
+			incentivizing the player to build an ever-expanding
+			network of space-lanes and interconnected stations.
+			The second indicator of their importance is that
+			the Star-Scions will frequently attack unprotected
+			resource routes. Star-Scion holdings in systems where
+			the resource route moves through will also attack it.
+			Therefore, it is imperative that the player is aware 
+			of the existence and structure of their resource 
+			routes, and that they make moves to protect them
+			by assigning military patrol routes and/or building
+			defense stations in particularly barren systems which
+			the resource route passes through.
+
+	Research :
+		Research has two parts: military research and construction
+			research. As the player is controlling a collection
+			of robots, common research tropes like "cultural"
+			or "society" research would be non-sensical. Instead,
+			the research process focuses on granting the
+			player gradually more powerful or efficient ways
+			of destroying Star-Scion hordes, constructing stations,
+			establishing planetary control, and improving the
+			efficiency of resource route infrastructure.
+
+		The actual method for allocating research is very similar
+			to the system in the original Master of Orion game.
+			The player has a general "research" fund, which
+			they can split between a number of sections. Every
+			game tick, each section gets its percentage of the
+			total research fund, ammounting over time to equal
+			or exceed the research target for that section.
+			When the research target is reached, the player
+			receives a new technology that fits thematically
+			with that specific section of research. The
+			sections of research are as follows:
+
+			* Mobile Space Warfare
+				This section specializes in researching new
+				and better space combat ships. It can also
+				lead to new types of combat ships. For
+				example, in the start of the game the player
+				only has access to the most rudimentary
+				combat ship; the interceptor, but can
+				eventually learn how to build escorts,
+				cruisers, and dreadnoughts.
+
+			* Static Space Warfare
+				Static space warfare focuses on constructing
+				more powerful defense stations that can
+				protect trade routes or star systems. They
+				Their upgraded versions will typically have
+				larger range and more powerful or faster
+				firing weaponry. Some reasearch options
+				may even enable new, more specialized
+				platforms, such as a faster firing station for
+				eliminating small Star-Scions.
+
+			* Ground Warfare
+				Ground warfare focuses on creating more
+				powerful bot warriors that can attack or
+				hold planets. It can also give advances
+				in constructing ground facilities like
+				fortifications or sensor arrays.
+
+			* Infrastructure and Power Distribution
+				This section yields advances in consstructing
+				more efficent space lanes for resource
+				routes, more efficient and powerful energy
+				distributors.
+
+			* Mining and Construction
+				This section yields advances in more efficient 
+				research and mining stations. This is also the
+				section that will allow the player to mine
+				new, more advanced materials. Finally,
+				this section can also yield better construction
+				facilities and ground facilities that can
+				increase the exploit yield or construction
+				rate of planets.
+	Star-Scions :
+		The Star-Scions are an ancient amalgamation of evil. Whether
+			it is by intellect or instinct is unknown, but they
+			seem to have a knack for war and a hatred of all
+			other lifeforms. They view the player and their
+			bots as the remmants of the human lifeform, and
+			thus an enemy to their existence. 
+
+		The Star-Scions have several holdings in the star systems
+			surrounding Alnilam. These holdings typically center
+			around anomalies or resource caches, and the strength
+			of the forces guarding the holding usually betray
+			the value of the thing they are guarding. Star-Scion
+			holdings will not attack player forces unless either
+			force enters into the combat range of the other. Then,
+			they will pursue the player forces until they leave
+			the system or either force is destroyed.
+
+		The Star-Scions can also raid resource routes. Which resource
+			route they decide to raid is dependent on multiple
+			factors; firstly, the overall value of the route
+			(how many resources are moving through it at a
+			given rate), how well it's protected (this value
+			is determined by examining how many player ships
+			are in the systems that the resource rate consists of,
+			as well as defense stations and planetary facilities),
+			and how long ago the resource route was last attacked,
+			if it was at all.
+
+		Finally, the Star-Scions can initiate attacks on player
+			held systems. The forces with which they attack
+			a system are far fiercer than the raiding forces that
+			attack resource routes, or even the many holdings
+			scattered across the stars. System attacks do not
+			occur until a set amount of time after game start,
+			and gradually increase in ferocity and frequency
+			afterwards. The Star-Scions determine which system
+			to attack in a similar way that they decide to
+			attack resource routes. Note that they will never
+			attack the player's home system of Alnilam, except
+			for a special attack at the end of the game.
+
+
+
+
+	Military Ships :
+		Both forces have a number of ship archetypes. These
+			archetypes will gradually grow more powerful in
+			their respective ways over the course of the game,
+			but their foundational purpose will remain the same.
+			However, two things must be noted: while this entry
+			describes the ships using their robot names, all of
+			the data still applies fully for the equivalent
+			unit on the Star-Scion side. Secondly, while 
+			Star-Scions may act and be treated as ships, they
+			are, in fact, discrete biological organisms.
+			The archetypes are as follows;
+				* Aircraft 
+					Aircraft are light and numerous, 
+					and are designed to pepper larger 
+					ships, which they gain an attack bonus 
+					against. However, they are lightly 
+					armored and can be easily destroyed by 
+					fast firing armor piercing rounds from 
+					escort ships or anti-aircraft stations. 
+					In terms of behavior, Aircraft
+					will single out the biggest ship they
+					are in combat range of and attack it.
+				
+				* Frigates
+					Frigates are medium weight escort
+					vessels. They typically guard larger 
+					vessels or act as the leading force 
+					for a small raiding party. They 
+					specialize in destroying aircraft, 
+					and will automatically target them 
+					if they are available. However, their 
+					fighting prowess against other ships 
+					is not to be underestimated, and a 
+					good number of frigates may mean the
+					difference between victory and defeat.
+
+				* Battleships
+					Battleships are the ships of the
+					line for any advanced naval force. They
+					have high attack and defense, but
+					are relatively slow and lack good
+					anti-aircraft defenses. To make up for
+					this, a battleship should never enter 
+					into battle without an escort of at 
+					least three escorts. 
+
+				* Dreadnoughts
+					The Dreadnoughts are the largest of
+					all naval vessels. They have massive
+					attack and defense capabilities, as
+					well as extraordinary range, and
+					can easily turn the tide of any battle
+					if utilized appropriately. They also
+					increase the fighting effectiveness
+					of all nearby allies, meaning that
+					a fleet with a dreadnought will fight
+					better and last longer than one
+					without. However, this bonus does
+					not stack, and does not apply to
+					other dreadnoughts. The dreadnoughts
+					have only one major weakness: their
+					immobility. They cannot move fast,
+					and they can barely turn at all. 
+					This means that a dreadnought detached
+					from its fleet can be easy pickings
+					for a force that would otherwise have
+					been decimated by it. When a 
+					dreadnought is destroyed, all of the
+					units it was previously buffing are
+					given a major temporary debuff to
+					demonstrate the loss of leadership
+					and morale. This can be useful
+					information for a resourceful and
+					mobile attacker...
+	Anomalies :
+		Strewn about the many stars in the galaxy are dormant
+			structures and stations left by the once ascendant
+			Human empire. While the historical and cultural
+			significance of these ruins is lost upon the robots,
+			the resources and ancient technologies housed in 
+			these locales are not. However, many of them are
+			guarded by the Star-Scions... why they are guarding
+			these areas is unknown, as it seems illogical for
+			a race designed to destroy to take so seriously
+			the preservation of remmants of their enemy. But
+			defeating them and claiming the rewards inside is
+			critical to the advancement of the Dyson Sphere
+			construction plan, as the manifold technologies and
+			resources in the stations and facilities can give
+			the robots powerful weapons, resource exploitation
+			and construction methodologies, and (a very special
+			anomaly) a warp-gate station that can instantly
+			teleport forces from one point in space to another.
+			(Note that the warp-gate stations are too energy
+			intensive to handle the massive amounts of resource
+			convoys that move through resource routes, meaning
+			that it is only useful for military purposes.)	
+		
+		The strength of the Star-Scions guarding the anomaly is a
+			loose indication of the strength of the anomaly
+			being guarded.
+
+	Dyson Sphere Construction and Energy Management :
+		The Dyson Sphere is constructed over multiple phases.
+			Each phase requires a new type of resource, and
+			has a generally increased resource cost over the
+			last phase. To construct the dyson sphere, the
+			player must allocate resources to its construction.
+			These resources go into their own pool, and then
+			spent steadily over time to increase the 
+			construction value. How quickly the construction
+			value is increased is determined by how many
+			construction bots are allocated to the sphere's
+			construction. If there are no resources in the
+			pool, then the construction bots idle and no
+			progress is made.
+			
+		The Dyson Sphere generates energy. How much energy it
+			generates depends on how constructed it is. Note
+			that its energy generation does not discretely
+			increase with each phase up, but instead increases
+			gradual as more and more resources are allocated
+			to it. All bots require energy for upkeep. Battle-bots
+			like battleships or interceptors require higher
+			energy upkeep, depending on the size of the unit.
+			Stations also require energy. Energy is distributed
+			to units via recharge stations, where units will
+			recharge power if they go near enough it. Note
+			that units will not automatically move to power
+			recharge stations; they must manually be moved there
+			or risk dying in the coldness of space. Energy
+			is transmitted through specialized infrastructure
+			(energy waveguides). All instances of energy
+			waveguides start at the Dyson Sphere and connect
+			to separate stations (which can only be powered
+			by such a connection) and energy research stations.
+			Note that bots will not recharge enrgy from being
+			near energy waveguides, but will not lose energy
+			either, making it possible for them to move through
+			the lines and move to energy research stations.
+
+		Finally, note that energy waveguides increase the
+			"infrastructure" value of its position, meaning that
+			resource routes are more likely to shape around or
+			mutate to follow energy waveguide constructions.
+
+	Building Construction :
+		Buildings are constructed by designating its construction
+			location, where a silhouette of the building is
+			placed. Then, builder bots will take resources from
+			the nearest possible warehouse (the Dyson Sphere
+			acts a warehouse) and then bring them to that
+			position. Then, they will spend a certain amount of
+			time assigning those resources to the building,
+			increasing its construction progress. Once construction
+			progress has reached 100%, the building is active.
